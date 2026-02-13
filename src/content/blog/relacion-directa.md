@@ -2,7 +2,7 @@
 title: "Relación Directa y Regular (Visitas): El derecho a estar presente"
 description: "Cómo establecer un régimen de visitas justo que fortalezca el vínculo con sus hijos y evite conflictos judiciales innecesarios."
 pubDate: 2024-02-16
-heroImage: "/blog-placeholder-4.jpg"
+heroImage: "/blog-relacion.png"
 ---
 
 # Relación Directa y Regular: Más que "visitas", es un vínculo

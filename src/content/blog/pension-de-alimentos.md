@@ -2,7 +2,7 @@
 title: "Pensión de Alimentos en Iquique: Guía Completa 2024"
 description: "¿Necesita demandar, aumentar o rebajar una pensión de alimentos en Iquique? Conozca el proceso, los montos y cómo asegurar el futuro de sus hijos con HMF Legal."
 pubDate: 2024-02-13
-heroImage: "/blog-placeholder-1.jpg"
+heroImage: "/blog-pension.png"
 ---
 
 # Pensión de Alimentos en Iquique: Todo lo que debe saber para proteger a sus hijos

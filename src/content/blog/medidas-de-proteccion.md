@@ -2,7 +2,7 @@
 title: "Medidas de Protección: Qué hacer ante una vulneración de derechos"
 description: "Si el Tribunal o la OPD han intervenido por una presunta vulneración de derechos de un niño, debe actuar rápido. Guía legal urgente."
 pubDate: 2024-02-15
-heroImage: "/blog-placeholder-3.jpg"
+heroImage: "/blog-proteccion.png"
 ---
 
 # Medidas de Protección: Actuar Rápido es Clave

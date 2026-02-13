@@ -2,7 +2,7 @@
 title: "Cuidado Personal (Tuición): Mitos y Realidades en Chile"
 description: "¿Quién se queda con los hijos tras la separación? Un análisis legal sobre el Cuidado Personal y la corresponsabilidad parental desde Iquique."
 pubDate: 2024-02-14
-heroImage: "/blog-placeholder-2.jpg"
+heroImage: "/blog-cuidado.png"
 ---
 
 # Cuidado Personal: El Interés Superior del Niño es lo Primero
