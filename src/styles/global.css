@@ -2,9 +2,10 @@
 @plugin "@tailwindcss/typography";
 
 @theme {
-  --color-petrol: #0a0a0a;
-  --color-sand: #f5f5dc;
-  --color-gold: #c5a059;
+  /* Colores */
+  --color-petrol: #1e293b; /* Slate 800 - un azul grisáceo oscuro */
+  --color-sand: #f5f5f0; /* Un beige muy suave */
+  --color-gold: #b49248; /* Darkened Gold for WCAG AA contrast against white */
 
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
   --font-serif: "Playfair Display", ui-serif, Georgia, serif;

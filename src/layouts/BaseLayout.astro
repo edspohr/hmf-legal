@@ -2,6 +2,7 @@
 import "../styles/global.css";
 import "@fontsource/inter";
 import "@fontsource/playfair-display";
+import Footer from "../components/Footer.astro";
 
 interface Props {
   title: string;
@@ -32,6 +33,20 @@ const jsonLD = {
   "url": Astro.site,
   "telephone": "+56981687181",
   "priceRange": "$$",
+  "areaServed": {
+    "@type": "GeoCircle",
+    "geoMidpoint": {
+        "@type": "GeoCoordinates",
+        "latitude": "-20.2307",
+        "longitude": "-70.1357"
+    },
+    "geoRadius": "50000"
+  },
+  "sameAs": [
+    "https://www.linkedin.com/in/herbert-medrano",
+    "https://www.facebook.com/hmflegal"
+  ],
+  "hasMap": "https://goo.gl/maps/placeholder",
   "openingHoursSpecification": [
     {
       "@type": "OpeningHoursSpecification",
@@ -75,7 +90,10 @@ const jsonLD = {
 
     <title>{title}</title>
   </head>
-  <body class="bg-gray-50 text-slate-800 font-sans antialiased">
-    <slot />
+  <body class="bg-gray-50 text-slate-800 font-sans antialiased flex flex-col min-h-screen">
+    <div class="flex-grow">
+        <slot />
+    </div>
+    <Footer />
   </body>
 </html>

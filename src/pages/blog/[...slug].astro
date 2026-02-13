@@ -2,6 +2,7 @@
 import { getCollection, type CollectionEntry } from "astro:content";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import Navigation from "../../components/Navigation.astro";
+import AuthorBox from "../../components/AuthorBox.astro";
 import { Image } from "astro:assets";
 
 export async function getStaticPaths() {
@@ -24,6 +25,7 @@ const { Content } = await post.render();
   <main class="pt-24 pb-16 min-h-screen bg-gray-50">
     <article class="max-w-3xl mx-auto px-4">
       <div class="mb-10 text-center">
+      <div class="mb-10 text-center">
         <!-- Breadcrumb -->
         <nav class="flex justify-center text-sm text-slate-500 mb-6" aria-label="Breadcrumb">
           <ol class="inline-flex items-center space-x-1 md:space-x-3">
@@ -39,8 +41,9 @@ const { Content } = await post.render();
             <li>
               <span class="mx-2 text-slate-300">/</span>
             </li>
-            <li aria-current="page">
-              <span class="text-petrol font-medium truncate max-w-[150px] sm:max-w-none">{post.data.title}</span>
+            <li aria-current="page" class="overflow-hidden">
+               <!-- Truncate for small screens, allow more on larger -->
+              <span class="text-petrol font-medium truncate block max-w-[120px] xs:max-w-[200px] sm:max-w-none">{post.data.title}</span>
             </li>
           </ol>
         </nav>
@@ -61,6 +64,23 @@ const { Content } = await post.render();
 
       <div class="prose prose-lg prose-petrol prose-headings:font-serif prose-headings:text-petrol prose-p:text-slate-600 prose-a:text-gold hover:prose-a:text-yellow-600 mx-auto bg-white p-8 md:p-12 rounded-2xl shadow-sm border border-gray-100">
         <Content />
+        
+        <!-- Embedded CTA -->
+        <div class="my-12 p-8 bg-petrol/5 rounded-xl border border-petrol/10 text-center">
+            <h3 class="font-serif text-2xl text-petrol mb-4">¿Estás pasando por una situación similar?</h3>
+            <p class="text-slate-600 mb-6">No tienes que enfrentarlo solo. Conversemos sobre tu caso y busquemos la mejor solución.</p>
+            <a 
+                href="https://wa.me/56981687181?text=Hola%20Herbert,%20leí%20su%20artículo%20y%20necesito%20asesoría."
+                target="_blank"
+                class="inline-block bg-green-500 text-white font-bold py-3 px-6 rounded-full shadow hover:bg-green-600 transition-colors"
+             >
+                Consultar por WhatsApp
+            </a>
+        </div>
+      </div>
+
+      <div class="max-w-3xl mx-auto px-4">
+        <AuthorBox />
       </div>
 
       <div class="mt-12 text-center">

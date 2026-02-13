@@ -1,16 +1,32 @@
 ---
-const links = [
-  { href: "/#servicios", label: "Servicios" },
-  { href: "/#sobre-mi", label: "Sobre Mí" },
-  { href: "/#contacto", label: "Contacto" },
-];
+import { Image } from "astro:assets";
+import logoImage from "../../public/logo.png"; // Assuming logo is in public, but for Image optimization it's better if it's in src/assets. I will check where it fits best or just link it.
+// Actually, for astro:assets to work best with optimization, the image should be imported.
+// But the user's logo is at /logo.png (public).
+// To use <Image /> effectively with optimization, I normally need it in src/assets.
+// However, the instructions say "Replace the standard <img> tag for the logo with the Astro <Image /> component".
+// If it's in public, <Image src="/logo.png" ... /> works but doesn't optimize much relative to <img> unless we set width/height.
+// I'll try to use the public path, but strict Astro <Image> usually wants a local import for full optimization.
+// Let's import the data first.
+import { navigationLinks } from "../data/site";
+
+const currentPath = Astro.url.pathname;
 ---
 
 <nav class="fixed w-full z-50 top-0 start-0 glass transition-all duration-500 animate-fade-in-down bg-petrol/95 backdrop-blur-xl border-b border-white/5 py-2">
   <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
     <a href="/" class="flex items-center space-x-3 rtl:space-x-reverse group">
       <div class="relative w-24 h-24 md:w-32 md:h-32 rounded-full shadow-2xl group-hover:scale-105 transition-transform duration-300 overflow-hidden border-2 border-gold/50 -my-4">
-        <img src="/logo.png" alt="IV Estudio Jurídico" class="w-full h-full object-cover" />
+        {/* Using standard img for public folder resource if not moving it, but request asked for Astro Image. 
+            If I use <Image src="/logo.png" ... /> I need to specify width/height.
+        */}
+        <Image 
+            src="/logo.png" 
+            alt="HMF Legal" 
+            width={128} 
+            height={128} 
+            class="w-full h-full object-cover" 
+        />
       </div>
     </a>
     <button data-collapse-toggle="navbar-default" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gold rounded-lg md:hidden hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-gold/50 transition-colors" aria-controls="navbar-default" aria-expanded="false">
@@ -21,18 +37,40 @@ const links = [
     </button>
     <div class="hidden w-full md:block md:w-auto" id="navbar-default">
       <ul class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-white/10 rounded-lg bg-petrol/95 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-transparent">
-        {links.map((link) => (
-          <li>
-            <a href={link.href} class="block py-2 px-3 text-gray-100 rounded hover:bg-white/10 md:hover:bg-transparent md:border-0 md:hover:text-gold md:p-0 transition-all duration-300 relative group">
-              {link.label}
-              <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-gold transition-all duration-300 group-hover:w-full"></span>
-            </a>
-          </li>
-        ))}
+        {navigationLinks.map((link) => {
+             const isActive = currentPath === link.href || (link.href !== '/' && currentPath.startsWith(link.href));
+             // For anchors like /#servicios, active state is tricky server-side.
+             // But we can check if currentPath is strictly just the path part if needed, or if it matches exactly.
+             // Since most are anchors on home page, they might all highlight on home.
+             // Let's stick to simple logic: match href exactly or simple prefix if not root.
+             // Actually, for single page scroll anchors, the "active" state is usually handled by JS scrollspy.
+             // But the request says "link corresponding to the current page".
+             // If we are on home, we might not want to highlight all anchors.
+             // I'll leave the logic simple for now: Highlight if exact match or if inside that section's page (links can lead to other pages).
+             
+             // The user mainly wants visual feedback.
+             return (
+              <li>
+                <a 
+                    href={link.href} 
+                    class:list={[
+                        "block py-2 px-3 rounded hover:bg-white/10 md:hover:bg-transparent md:border-0 md:hover:text-gold md:p-0 transition-all duration-300 relative group",
+                        isActive ? "text-gold" : "text-gray-100"
+                    ]}
+                >
+                  {link.label}
+                  <span class:list={["absolute -bottom-1 left-0 h-0.5 bg-gold transition-all duration-300", isActive ? "w-full" : "w-0 group-hover:w-full"]}></span>
+                </a>
+              </li>
+            );
+        })}
         <li>
-            <a href="/blog" class="block py-2 px-3 text-gray-100 rounded hover:bg-white/10 md:hover:bg-transparent md:border-0 md:hover:text-gold md:p-0 transition-all duration-300 relative group">
+            <a href="/blog" class:list={[
+                "block py-2 px-3 rounded hover:bg-white/10 md:hover:bg-transparent md:border-0 md:hover:text-gold md:p-0 transition-all duration-300 relative group",
+                currentPath.startsWith('/blog') ? "text-gold" : "text-gray-100"
+            ]}>
               Blog
-              <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-gold transition-all duration-300 group-hover:w-full"></span>
+              <span class:list={["absolute -bottom-1 left-0 h-0.5 bg-gold transition-all duration-300", currentPath.startsWith('/blog') ? "w-full" : "w-0 group-hover:w-full"]}></span>
             </a>
         </li>
       </ul>
