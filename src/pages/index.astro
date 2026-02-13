@@ -10,9 +10,24 @@ const pageTitle = "HMF Legal | Defensa Legal con Sentido Humano";
   <Navigation />
   
   <!-- Hero Section -->
-  <section class="relative h-screen flex items-center justify-center bg-gradient-to-br from-petrol to-slate-900 text-white overflow-hidden">
-    <div class="absolute inset-0 bg-[url('/hero-bg.svg')] opacity-10 mix-blend-overlay"></div>
-    <div class="z-10 text-center px-4 max-w-4xl mx-auto animate-fade-in-up">
+  <!-- Hero Section -->
+  <section class="relative h-screen flex items-center justify-center overflow-hidden">
+    <!-- Video Background -->
+    <div class="absolute inset-0 z-0">
+      <video
+        autoplay
+        loop
+        muted
+        playsinline
+        class="w-full h-full object-cover"
+        poster="/hero-bg.svg"
+      >
+        <source src="/HMF-hero.mp4" type="video/mp4" />
+      </video>
+      <!-- Gradient Overlay for readability and brand tint -->
+      <div class="absolute inset-0 bg-gradient-to-br from-petrol/90 via-petrol/50 to-slate-900/90"></div>
+    </div>
+    <div class="z-10 relative text-center px-4 max-w-4xl mx-auto animate-fade-in-up text-white">
       <h1 class="font-serif text-5xl md:text-7xl font-bold mb-6 tracking-tight leading-tight">
         Defensa legal con <span class="text-gold italic">sentido humano</span>
       </h1>
