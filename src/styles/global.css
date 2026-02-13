@@ -3,9 +3,10 @@
 
 @theme {
   /* Colores */
-  --color-petrol: #1e293b; /* Slate 800 - un azul grisáceo oscuro */
+  --color-petrol: #0a0a0a; /* Logo Black/Darkest Tone */
   --color-sand: #f5f5f0; /* Un beige muy suave */
-  --color-gold: #b49248; /* Darkened Gold for WCAG AA contrast against white */
+  --color-gold: #d3a94a; /* Logo Gold */
+  --color-gold-dark: #a67c2e; /* Accessible darker gold for text on white */
 
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
   --font-serif: "Playfair Display", ui-serif, Georgia, serif;
