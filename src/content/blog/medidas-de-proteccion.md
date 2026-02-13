@@ -1,25 +1,45 @@
 ---
-title: "¿Qué hacer ante una Medida de Protección de la Infancia?"
-description: "Consejos legales urgentes para familias enfrentando medidas de protección o vulneración de derechos en Tarapacá."
+title: "Medidas de Protección: Qué hacer ante una vulneración de derechos"
+description: "Si el Tribunal o la OPD han intervenido por una presunta vulneración de derechos de un niño, debe actuar rápido. Guía legal urgente."
 pubDate: 2024-02-15
 heroImage: "/blog-placeholder-3.jpg"
 ---
 
 # Medidas de Protección: Actuar Rápido es Clave
 
-Si ha sido notificado de una Medida de Protección a favor de un niño, niña o adolescente, significa que el Tribunal de Familia o la Oficina de Protección de Derechos (OPD) considera que existen graves vulneraciones de derechos.
+Recibir una citación por una **Medida de Protección** es una de las situaciones más angustiantes para una familia. Significa que una institución (Colegio, Hospital, OPD) o un particular ha denunciado que los derechos de un niño, niña o adolescente están siendo vulnerados gravemente.
 
-## Causas Comunes
+En Iquique y la región de Tarapacá, estas causas se tramitan con urgencia en el Tribunal de Familia.
+
+## ¿Por qué se inicia una Medida de Protección?
+
+Las causales más frecuentes incluyen:
 
 - Maltrato físico o psicológico.
-- Negligencia grave.
+- Negligencia grave (descuido en higiene, salud, alimentación).
 - Abuso sexual.
-- Testigo de violencia intrafamiliar.
+- Consumo de drogas o alcohol por parte de los cuidadores.
+- Violencia Intrafamiliar (VIF) presenciada por el niño.
 
-## El Procedimiento
+## El Procedimiento en el Tribunal
 
-El Tribunal puede decretar medidas cautelares inmediatas, como la salida del agresor del hogar o, en casos extremos, la separación del niño de su familia de origen (acogimiento familiar o residencial).
+1.  **Audiencia Preparatoria:** El juez revisará los antecedentes. Puede decretar "medidas cautelares" inmediatas antes de investigar a fondo.
+2.  **Medidas Cautelares:** Pueden ir desde la orden de que el agresor abandone el hogar, hasta la **separación del niño de su familia** (ingreso a un hogar o familia de acogida).
+3.  **Informes Periciales:** Se ordenarán pericias del DAM (Diagnóstico Ambulatorio) para evaluar las competencias parentales.
 
-## Defensa Especializada
+## ¿Qué hago si me están investigando?
 
-Estas causas son complejas y requieren un abogado que conozca el sistema proteccional. Mi objetivo es asegurar que se respete el debido proceso y trabajar para que, si las condiciones lo permiten, el niño pueda permanecer o retornar a un entorno familiar seguro lo antes posible.
+**No se defienda solo.** Lo que usted diga en audiencia puede ser malinterpretado si no conoce el lenguaje técnico y proteccional.
+
+Como abogado defensor, mi objetivo es:
+
+1.  Asegurar que se respete el debido proceso.
+2.  Demostrar sus competencias protectoras.
+3.  Evitar la institucionalización (que el niño se vaya al SENAME/Mejor Niñez) proponiendo redes familiares de apoyo (abuelos, tíos).
+
+## Un enfoque sensible
+
+Estas causas requieren frialdad técnica pero mucha sensibilidad humana. Entiendo el miedo que siente. Permítame ayudarle a navegar este complejo sistema para proteger la integridad de su familia.
+
+**Si tiene una audiencia próxima, no espere.**
+[Envíeme un mensaje urgente](https://wa.me/56981687181?text=Hola%20Herbert,%20tengo%20una%20causa%20de%20Medida%20de%20Protección%20y%20es%20urgente.) para preparar su defensa.
