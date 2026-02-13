@@ -1,0 +1,76 @@
+---
+import { getCollection, type CollectionEntry } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Navigation from "../../components/Navigation.astro";
+import { Image } from "astro:assets";
+
+export async function getStaticPaths() {
+  const posts = await getCollection("blog");
+  return posts.map((post) => ({
+    params: { slug: post.slug },
+    props: post,
+  }));
+}
+
+type Props = CollectionEntry<"blog">;
+
+const post = Astro.props;
+const { Content } = await post.render();
+---
+
+<BaseLayout title={`${post.data.title} | HMF Abogados`} description={post.data.description} image={post.data.heroImage}>
+  <Navigation />
+  
+  <main class="pt-24 pb-16 min-h-screen bg-gray-50">
+    <article class="max-w-3xl mx-auto px-4">
+      <div class="mb-10 text-center">
+        <!-- Breadcrumb -->
+        <nav class="flex justify-center text-sm text-slate-500 mb-6" aria-label="Breadcrumb">
+          <ol class="inline-flex items-center space-x-1 md:space-x-3">
+            <li class="inline-flex items-center">
+              <a href="/" class="hover:text-gold transition-colors">Inicio</a>
+            </li>
+            <li>
+              <span class="mx-2 text-slate-300">/</span>
+            </li>
+            <li class="inline-flex items-center">
+              <a href="/blog" class="hover:text-gold transition-colors">Blog</a>
+            </li>
+            <li>
+              <span class="mx-2 text-slate-300">/</span>
+            </li>
+            <li aria-current="page">
+              <span class="text-petrol font-medium truncate max-w-[150px] sm:max-w-none">{post.data.title}</span>
+            </li>
+          </ol>
+        </nav>
+
+        <h1 class="font-serif text-4xl md:text-5xl text-petrol font-bold mb-4 leading-tight">{post.data.title}</h1>
+        <p class="text-slate-500 italic mb-8">Publicado el {post.data.pubDate.toLocaleDateString('es-CL', { year: 'numeric', month: 'long', day: 'numeric' })}</p>
+        
+        {post.data.heroImage && (
+            <div class="aspect-video bg-gray-200 rounded-xl overflow-hidden shadow-lg mb-10">
+                <img 
+                    src={post.data.heroImage} 
+                    alt={post.data.title} 
+                    class="w-full h-full object-cover"
+                />
+            </div>
+        )}
+      </div>
+
+      <div class="prose prose-lg prose-petrol prose-headings:font-serif prose-headings:text-petrol prose-p:text-slate-600 prose-a:text-gold hover:prose-a:text-yellow-600 mx-auto bg-white p-8 md:p-12 rounded-2xl shadow-sm border border-gray-100">
+        <Content />
+      </div>
+
+      <div class="mt-12 text-center">
+        <a href="/" class="inline-flex items-center font-medium text-petrol hover:text-gold transition-colors">
+            <svg class="w-4 h-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+            </svg>
+            Volver al Inicio
+        </a>
+      </div>
+    </article>
+  </main>
+</BaseLayout>

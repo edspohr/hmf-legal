@@ -1,0 +1,81 @@
+---
+import "../styles/global.css";
+import "@fontsource/inter";
+import "@fontsource/playfair-display";
+
+interface Props {
+  title: string;
+  description?: string;
+  image?: string;
+}
+
+const { 
+  title, 
+  description = "Abogado de familia en Iquique. Defensa legal con sentido humano para pensión de alimentos, cuidado personal y medidas de protección.", 
+  image = "/og-image.jpg" 
+} = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+
+const jsonLD = {
+  "@context": "https://schema.org",
+  "@type": "LegalService",
+  "name": "HMF Abogados - Herbert Medrano Fernandez",
+  "image": image,
+  "description": description,
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Iquique",
+    "addressRegion": "Región de Tarapacá",
+    "addressCountry": "Chile"
+  },
+  "url": Astro.site,
+  "telephone": "+56981687181",
+  "priceRange": "$$",
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      "opens": "09:00",
+      "closes": "18:00"
+    }
+  ],
+  "keywords": "abogado familia, pensión alimentos, cuidado personal, iquique, tarapacá, divorcio, medidas protección, abogado papá"
+};
+---
+
+<!doctype html>
+<html lang="es" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content={description} />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href={canonicalURL} />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={Astro.url} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={image} />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content={Astro.url} />
+    <meta property="twitter:title" content={title} />
+    <meta property="twitter:description" content={description} />
+    <meta property="twitter:image" content={image} />
+
+    <!-- JSON-LD -->
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLD)} />
+
+    <title>{title}</title>
+  </head>
+  <body class="bg-gray-50 text-slate-800 font-sans antialiased">
+    <slot />
+  </body>
+</html>
